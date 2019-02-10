@@ -14,4 +14,7 @@ app.use(morgan('combined', { stream: accessLogStream }))
 
 app.listen(3000, () => console.log(`Server is running`))
 
+app.get('/', (req, res) => {
+    res.send('Hey There! node-cluster')
+})
 module.exports = app
