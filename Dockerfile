@@ -1,8 +1,7 @@
-FROM node:latest
-RUN mkdir -p /usr/src/node-cluster
-WORKDIR /usr/src/node-cluster
-COPY package.json /usr/src/node-cluster
+FROM node:alpine
+WORKDIR /usr/app
+COPY package*.json ./
 RUN npm install
-COPY . /usr/src/node-cluster
+COPY . .
 EXPOSE 3000
 CMD [ "npm", "start" ]
